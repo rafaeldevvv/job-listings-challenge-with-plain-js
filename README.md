@@ -1,6 +1,6 @@
 # Frontend Mentor - Job listings with filtering solution
 
-This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -41,17 +41,19 @@ Users should be able to:
 ### What I learned
 
 This time I tried to organize more the code by splitting the code into files:
+
 - Footer.js
 - helpers.js
 - index.js
-- job.js
+- jobs.js
 - lists.js
 - Main.js
-It's my first time doing it. I know this is not be the best organization ever, but I'll practice more and improve my skills.
+  It's my first time doing it. I know this is not be the best organization ever, but I'll practice more and improve my skills.
 
 I also used webpack to bundle all the files into one minified file. This also lets me use import statements as much as I want.
 
 I had to specify a column gap of 3rem here because the aspect ratio for height 100% wasn't working quite well. Although the width was right according to the height, the buttons were overlapping the list items.
+
 ```scss
 .special-list.remove {
   column-gap: 3rem;
@@ -82,6 +84,27 @@ I had to specify a column gap of 3rem here because the aspect ratio for height 1
   .remove-btn:hover {
     background-color: $very-dark-grayish-cyan;
   }
+}
+```
+
+This is an amazing custom Hook. It is really easy to get the jobs with it.
+```js
+export function useJobs() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("data.json")
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json);
+      })
+      .catch(() => {
+        setData([]);
+        alert("ERROR: Something went wrong. Please reload the page or try again later.");
+      });
+  }, []);
+
+  return data;
 }
 ```
 

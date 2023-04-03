@@ -1,5 +1,5 @@
 import { RemoveList } from "./lists.js";
-import { JobList, useJobs } from "./job.js";
+import { JobList, useJobs } from "./jobs.js";
 import {filterJobs} from './helpers.js';
 const {useState} = React;
 
