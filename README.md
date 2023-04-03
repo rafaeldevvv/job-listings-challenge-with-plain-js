@@ -48,7 +48,8 @@ This time I tried to organize more the code by splitting the code into files:
 - jobs.js
 - lists.js
 - Main.js
-  It's my first time doing it. I know this is not be the best organization ever, but I'll practice more and improve my skills.
+
+It's my first time doing it. I know this is not be the best organization ever, but I'll practice more and improve my skills.
 
 I also used webpack to bundle all the files into one minified file. This also lets me use import statements as much as I want.
 
