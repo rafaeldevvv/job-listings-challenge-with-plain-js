@@ -7,13 +7,13 @@ export default function Main() {
   const jobs = useJobs();
   const visibleJobs = filterJobs(jobs, selectedCategories);
 
-  function addCategory(category) {
+  function handleSelect(category) {
     if (!selectedCategories.some((c) => c === category)) {
       setSelectedCategories([category, ...selectedCategories]);
     }
   }
 
-  function removeCategory(category) {
+  function handleRemove(category) {
     setSelectedCategories(selectedCategories.filter((c) => c !== category));
   }
 
@@ -22,13 +22,13 @@ export default function Main() {
       {selectedCategories.length > 0 && (
         <Filter
           categories={selectedCategories}
-          onRemove={removeCategory}
+          onRemove={handleRemove}
           onClear={() => {
             setSelectedCategories([]);
           }}
         />
       )}
-      <JobList jobs={visibleJobs} onSelect={addCategory} />
+      <JobList jobs={visibleJobs} onSelect={handleSelect} />
     </main>
   );
 }

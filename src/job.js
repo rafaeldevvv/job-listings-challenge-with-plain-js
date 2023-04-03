@@ -46,7 +46,7 @@ export function JobList({ jobs, onSelect }) {
 export function Job({ job, onSelect }) {
   return (
     <article
-      className={`job-container box-shadow ${job.featured ? "featured" : ""}`}
+      className={`job box-shadow ${job.featured ? "featured" : ""}`}
     >
       <div className="job-description">
         <img src={job.logo} alt={job.company + "'s Logo"} className="logo" />
