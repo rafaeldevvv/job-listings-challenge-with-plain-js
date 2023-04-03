@@ -1,4 +1,5 @@
 import { DottedList, SelectList } from "./lists.js";
+import {getItems} from './helpers.js';
 const { useState, useEffect } = React;
 
 export function useJobs() {
@@ -17,18 +18,6 @@ export function useJobs() {
   }, []);
 
   return data;
-}
-
-export function getItems(job) {
-  const items = [job.role, job.level, ...job.languages, ...job.tools];
-  return items;
-}
-
-export function filterJobs(jobs, categories) {
-  const newJobs = jobs.filter((job) =>
-    categories.every((c) => getItems(job).includes(c))
-  );
-  return newJobs;
 }
 
 export function JobList({ jobs, onSelect }) {
