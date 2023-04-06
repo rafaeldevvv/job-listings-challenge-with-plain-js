@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [here](https://github.com/rafaeldevvv/job-listings-challenge)
-- Live Site URL: [here](https://rafaeldevvv.github.io/job-listings-challenge/)
+- Solution URL: [here](https://github.com/rafaeldevvv/job-listings-challenge-with-plain-js)
+- Live Site URL: [here](https://rafaeldevvv.github.io/job-listings-challenge-with-plain-js/)
 
 ## My process
 
