@@ -36,77 +36,15 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
 
 ### What I learned
 
-This time I tried to organize more the code by splitting the code into files:
+I wanted to try to make the same application with plain js. It was fun. Most part of this code is based on the code of the last project of the book [Eloquent JavaScript](https://eloquentjavascript.net/) by Marijn Haverbeke. This is a really good book.
 
-- Footer.js
-- helpers.js
-- index.js
-- jobs.js
-- lists.js
-- Main.js
+I saw people using this binding to select elements in the document and I wanted to try it too. chatGPT just taught me that I had to bind the querySelector method to the document object or call it with the document object.
 
-It's my first time doing it. I know this is not be the best organization ever, but I'll practice more and improve my skills.
-
-I also used webpack to bundle all the files into one minified file. This also lets me use import statements as much as I want.
-
-I had to specify a column gap of 3rem here because the aspect ratio for height 100% wasn't working quite well. Although the width was right according to the height, the buttons were overlapping the list items.
-
-```scss
-.special-list.remove {
-  column-gap: 3rem;
-  li {
-    display: flex;
-  }
-
-  .special-list-item {
-    font-size: 1.1rem;
-    border-radius: 0.3rem 0 0 0.3rem;
-  }
-
-  .remove-btn {
-    border-radius: 0 0.3rem 0.3rem 0;
-    background-color: $desaturated-dark-cyan;
-    transition: background-color 0.4s;
-    position: relative;
-    height: 100%;
-    aspect-ratio: 1;
-
-    img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate((-50%, -50%));
-    }
-  }
-  .remove-btn:hover {
-    background-color: $very-dark-grayish-cyan;
-  }
-}
-```
-
-This is an amazing custom Hook. It is really easy to get the jobs with it.
 ```js
-export function useJobs() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json);
-      })
-      .catch(() => {
-        setData([]);
-        alert("ERROR: Something went wrong. Please reload the page or try again later.");
-      });
-  }, []);
-
-  return data;
-}
+const $ = (query) => document.querySelector(query);
 ```
 
 ### Useful resources
