@@ -156,7 +156,7 @@ function renderJob(job, dispatch) {
         elt(
           "div",
           { className: "head" },
-          elt("h3", { className: "cyan-text company-name" }),
+          elt("h3", { className: "cyan-text company-name" }, job.company),
           _new,
           featured
         ),
