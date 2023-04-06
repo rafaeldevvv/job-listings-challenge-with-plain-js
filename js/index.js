@@ -179,7 +179,12 @@ class JobListingApp {
       "div",
       null,
       this.filterDOM,
-      elt("section", { id: "jobs" }, this.jobsDOM)
+      elt(
+        "section",
+        { id: "jobs" },
+        elt("h2", { className: "sr-only" }, "List of Jobs"),
+        this.jobsDOM
+      )
     );
 
     this.syncState(state);
